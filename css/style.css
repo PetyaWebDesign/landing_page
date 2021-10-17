@@ -2,6 +2,10 @@
     --yellow: #f4dc00;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -78,8 +82,12 @@ header ul.navigation {
     display: flex;
 }
 
+#hero-section header .nav {
+    display: flex;
+}
+
 header ul.navigation li {
-    margin-right: 100px;
+    margin-right: 20px;
 }
 
 header ul.navigation li a {
@@ -87,19 +95,115 @@ header ul.navigation li a {
     color: #ffffff;
 }
 
+
+/* Hamburger menu */
+
+.toggle-button {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 3px;
+}
+
 .hero-content {
-    text-align: center;
+    /* text-align: center; */
     width: 80%;
     margin: 0 auto;
     padding-top: 130px;
     padding-bottom: 130px;
 }
 
+.entry {
+    text-align: center;
+}
+
+
+/* Image of the machine */
+
+.animated_machine {
+    position: relative;
+    -webkit-animation: linear;
+    -webkit-animation-name: move;
+    -webkit-animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+@-webkit-keyframes move {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 50%;
+    }
+}
+
+.hero-content h1 span {
+    -webkit-animation: linear;
+    -webkit-animation-name: jump;
+    display: inline-block;
+    position: relative;
+    -webkit-animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes jump {
+    0% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(20deg);
+    }
+    90% {
+        transform: rotate(25deg);
+        transform: scale(1.1);
+    }
+    100% {
+        transform: rotate(30deg);
+        transform: scale(1.2);
+    }
+}
+
+@-webkit-keyframes jump {
+    0% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(20deg);
+    }
+    90% {
+        transform: rotate(25deg);
+        transform: scale(1.1);
+    }
+    100% {
+        transform: rotate(30deg);
+        transform: scale(1.2);
+    }
+}
+
 .hero-content h1 {
     color: var(--yellow);
     font-size: 8.3em;
     line-height: 120px;
-    text-transform: capitalize;
 }
 
 .hero-content p {
@@ -152,7 +256,8 @@ header ul.navigation li a {
 }
 
 .what-we-do-tabs {
-    width: 1200px;
+    width: 80%;
+    /*was 1200px*/
     margin: 0 auto;
     display: flex;
     margin-top: 30px;
@@ -196,7 +301,8 @@ header ul.navigation li a {
 }
 
 .who-we-are-info {
-    width: 1200px;
+    width: 80%;
+    /* was 1200px */
     margin: auto;
     text-align: center;
     margin-top: -200px;
@@ -237,6 +343,10 @@ header ul.navigation li a {
     flex: 1;
 }
 
+.slider-nav .arrow-nav {
+    cursor: pointer;
+}
+
 
 /* CTA section styling */
 
@@ -246,7 +356,8 @@ header ul.navigation li a {
 }
 
 .cta-content {
-    width: 1200px;
+    width: 80%;
+    /*was 1200px*/
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -285,7 +396,8 @@ a.cta-btn {
 }
 
 .clients-content {
-    width: 1200px;
+    width: 80%;
+    /* was 1200px */
     margin: auto;
     text-align: center;
 }
@@ -316,7 +428,8 @@ a.cta-btn {
 .numbers {
     display: flex;
     justify-content: space-between;
-    width: 1000px;
+    width: 50%;
+    /*was 1000px */
     margin: auto;
 }
 
@@ -347,8 +460,13 @@ a.cta-btn {
 .award_logos {
     display: flex;
     justify-content: space-between;
-    width: 1600px;
+    width: 90%;
+    /*was 1600px */
     margin: auto;
+}
+
+.award_logos img {
+    width: 100%;
 }
 
 
@@ -394,19 +512,19 @@ textarea {
     margin-top: 50px;
 }
 
-::-webkit-input-placeholder {
+#contacts form ::-webkit-input-placeholder {
     /* Edge */
     color: #7d7d7d;
     text-transform: uppercase;
 }
 
- :-ms-input-placeholder {
+#contacts form :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
     color: #7d7d7d;
     text-transform: uppercase;
 }
 
- ::placeholder {
+#contacts form ::placeholder {
     color: #7d7d7d;
     text-transform: uppercase;
 }
@@ -417,7 +535,7 @@ textarea:focus {
     outline: none;
 }
 
-option {
+input[type=option] {
     text-transform: uppercase;
 }
 
@@ -434,4 +552,43 @@ option {
     color: #ffffff;
     font-size: 1.3em;
     margin: 30px 0;
+}
+
+#footer .subscribe input[type=email] {
+    height: 30px;
+    border: none;
+    padding-left: 5px;
+}
+
+#footer .subscribe input[type=submit] {
+    background-color: #009cf3;
+    border: none;
+    color: #ffffff;
+    height: 31px;
+    padding: 0 20px;
+    margin-left: -5px;
+}
+
+#footer .address {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.3em;
+    display: inline-block;
+    margin-top: 70px;
+}
+
+#footer .google-maps-link {
+    display: block;
+    text-transform: uppercase;
+    text-decoration: underline;
+    color: var(--yellow);
+    font-size: 1.3em;
+    margin-top: 30px;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+    width: 30%;
+    margin: 40px auto;
 }
