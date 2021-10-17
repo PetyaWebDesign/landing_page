@@ -1,3 +1,11 @@
+// Hamburger menu
+const toglleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('nav')[0]
+
+toglleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
+
 // Image slider
 
 const prev = document.querySelector('.prev');
