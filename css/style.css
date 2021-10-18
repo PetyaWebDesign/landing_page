@@ -70,6 +70,7 @@ a.btn {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
 }
 
 #hero-section header {
@@ -241,6 +242,7 @@ header ul.navigation li a {
     padding-left: 12%;
     padding-right: 12%;
     padding-bottom: 320px;
+    background-attachment: fixed;
 }
 
 #what-we-do .what-we-do-nav {
@@ -365,6 +367,10 @@ header ul.navigation li a {
     padding-bottom: 127px;
 }
 
+.edesign-logo {
+    padding-right: 30px;
+}
+
 .cta-content p {
     margin-bottom: 40px;
     font-size: 1.3em;
@@ -388,6 +394,7 @@ a.cta-btn {
     background-image: url(../img/clients-bg.png);
     background-color: rgba(0, 0, 0, 0.774);
     background-blend-mode: multiply;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
